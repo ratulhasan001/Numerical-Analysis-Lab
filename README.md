@@ -1,4 +1,4 @@
-# numerical-methods-lab
+# Numerical Analysis Lab
 
 C++ implementations of standard numerical methods, written for the Numerical Analysis sessional (lab) course of the B.Sc. in Computer Science and Engineering at BAUET. The labs cover finding roots of non-linear equations (bisection, false position, fixed-point iteration, Newton–Raphson), Newton's forward-difference interpolation, and numerical integration with the trapezoidal and Simpson's 1/3 rules. Each function under study is hard-coded in the source, and the program reads the interval, initial guess or data points from standard input.
 
