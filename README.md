@@ -9,7 +9,7 @@ C++ implementations of standard numerical methods, written for the Numerical Ana
 | File | What it does |
 |---|---|
 | [bisection_method.cpp](lab-01/bisection_method.cpp) | Bisection on f(x) = x³ − 2x − 5 over a user-given interval `[a, b]` with f(a)·f(b) < 0. Stops when the interval width is below 1e-15. Converges linearly: about log₂((b − a)/ε) iterations. |
-| [transcendental.cpp](lab-01/transcendental.cpp) | The same bisection routine applied to a transcendental equation, f(x) = 4e⁻ˣ sin x − 1. |
+| [bisection_transcendental_equation.cpp](lab-01/bisection_transcendental_equation.cpp) | The same bisection routine applied to a transcendental equation, f(x) = 4e⁻ˣ sin x − 1. |
 
 ### [lab-02](lab-02) – False position and fixed-point iteration
 
@@ -28,14 +28,14 @@ C++ implementations of standard numerical methods, written for the Numerical Ana
 
 | File | What it does |
 |---|---|
-| [interpolation.cpp](lab-04/interpolation.cpp) | Newton's forward-difference interpolation. Builds the forward-difference table for `n` equally spaced points (up to 20) and evaluates the interpolating polynomial at a given x using u = (x − x₀)/h. Building the table takes O(n²). |
+| [newton_forward_interpolation.cpp](lab-04/newton_forward_interpolation.cpp) | Newton's forward-difference interpolation. Builds the forward-difference table for `n` equally spaced points (up to 20) and evaluates the interpolating polynomial at a given x using u = (x − x₀)/h. Building the table takes O(n²). |
 
 ### [lab-05](lab-05) – Numerical integration
 
 | File | What it does |
 |---|---|
-| [trap.cpp](lab-05/trap.cpp) | Composite trapezoidal rule over `n` tabulated, equally spaced points `(x, y)`: (h/2)·[y₀ + 2(y₁ + … + yₙ₋₂) + yₙ₋₁]. |
-| [simpson.cpp](lab-05/simpson.cpp) | Composite Simpson's 1/3 rule over `n` tabulated, equally spaced points: (h/3)·[y₀ + 4Σy_odd + 2Σy_even + yₙ₋₁]. Needs an odd number of points (an even number of sub-intervals). |
+| [trapezoidal_rule.cpp](lab-05/trapezoidal_rule.cpp) | Composite trapezoidal rule over `n` tabulated, equally spaced points `(x, y)`: (h/2)·[y₀ + 2(y₁ + … + yₙ₋₂) + yₙ₋₁]. |
+| [simpsons_one_third_rule.cpp](lab-05/simpsons_one_third_rule.cpp) | Composite Simpson's 1/3 rule over `n` tabulated, equally spaced points: (h/3)·[y₀ + 4Σy_odd + 2Σy_even + yₙ₋₁]. Needs an odd number of points (an even number of sub-intervals). |
 
 ## Build and run
 
@@ -52,8 +52,8 @@ Example inputs:
 |---|---|---|
 | `lab-02/false_position_method.cpp` | `0 1` | `Root value : 0.567206` |
 | `lab-02/iteration_method.cpp` | `2 0.00001 100` (x₀, tolerance, max iterations) | `2.09455` |
-| `lab-04/interpolation.cpp` | `4`, then the points `1 1  2 8  3 27  4 64`, then `2.5` | `15.625` |
-| `lab-05/simpson.cpp` | `3  0 0  1 1  2 4` (n, then the points of y = x²) | `2.66667` |
+| `lab-04/newton_forward_interpolation.cpp` | `4`, then the points `1 1  2 8  3 27  4 64`, then `2.5` | `15.625` |
+| `lab-05/simpsons_one_third_rule.cpp` | `3  0 0  1 1  2 4` (n, then the points of y = x²) | `2.66667` |
 
 To try a different equation, edit `equation_value` / `f` (and `g` for the derivative or iteration function) in the source file.
 
